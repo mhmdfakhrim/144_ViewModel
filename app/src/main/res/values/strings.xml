@@ -2,5 +2,5 @@
     <string name="app_name">kotlinio</string>
     <string name="laki">laki-laki</string>
     <string name="wanita">wanita</string>
-    <string name="submit">submit</string>
+    <string name="submit">Register</string>
 </resources>

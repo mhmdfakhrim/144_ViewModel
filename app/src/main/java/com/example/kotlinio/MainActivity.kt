@@ -150,7 +150,7 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         options = jenis.map{ id -> context.resources.getString(id)},
         onSelectedChanged = {cobaViewModel.setJK(it)})
     Button(modifier = Modifier.fillMaxWidth(),
-        onClick = {cobaViewModel.BacaData(textNama, texttlp, dataForm.sex)
+        onClick = {cobaViewModel.BacaData(textNama, texttlp, dataForm.sex, textemail)
         }
     ) {
         Text(text = stringResource(R.string.submit),
