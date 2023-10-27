@@ -149,6 +149,10 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
     SelectJK(
         options = jenis.map{ id -> context.resources.getString(id)},
         onSelectedChanged = {cobaViewModel.setJK(it)})
+    SelectStatus(
+        options = jenis.map{ id -> context.resources.getString(id)},
+        onSelectedChanged = {cobaViewModel.setStatus(it)})
+
     Button(modifier = Modifier.fillMaxWidth(),
         onClick = {cobaViewModel.BacaData(textNama, texttlp, dataForm.sex, textemail, dataForm.status)
         }
@@ -225,6 +229,39 @@ fun SelectJK(
     }
 
 }
+
+@Composable
+fun SelectStatus(
+    options: List<String>,
+    onSelectedChanged: (String) -> Unit = {}) {
+
+    var selectedValue by rememberSaveable { mutableStateOf("")
+    }
+    Column (modifier = Modifier.padding(16.dp)) {
+        options.forEach { item ->
+            Row (
+                modifier = Modifier.selectable(
+                    selected = selectedValue == item,
+                    onClick = { selectedValue = item
+                        onSelectedChanged(item)
+                    }
+                ),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RadioButton(
+                    selected = selectedValue == item,
+                    onClick = {
+                        selectedValue = item
+                        onSelectedChanged(item)
+                    }
+                )
+                Text(item)
+            }
+        }
+    }
+
+}
+
 
 
 
