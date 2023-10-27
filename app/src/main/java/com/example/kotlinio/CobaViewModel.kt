@@ -31,6 +31,11 @@ class CobaViewModel: ViewModel() {
     }
     fun setJK(selectJK:String){
         _uiState.update { currentState -> currentState.copy(sex= selectJK)}
+
+    }
+    fun setStatus(selectStatus:String){
+        _uiState.update { currentState -> currentState.copy(status= selectStatus)}
+
     }
 
     fun BacaData(nm: String, tlp: String, jk: String, email: String) {

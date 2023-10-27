@@ -150,7 +150,7 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         options = jenis.map{ id -> context.resources.getString(id)},
         onSelectedChanged = {cobaViewModel.setJK(it)})
     Button(modifier = Modifier.fillMaxWidth(),
-        onClick = {cobaViewModel.BacaData(textNama, texttlp, dataForm.sex, textemail)
+        onClick = {cobaViewModel.BacaData(textNama, texttlp, dataForm.sex, textemail, dataForm.status)
         }
     ) {
         Text(text = stringResource(R.string.submit),
@@ -206,13 +206,12 @@ fun SelectJK(
             Row (
                 modifier = Modifier.selectable(
                     selected = selectedValue == item,
-                    onClick = {
-                        selectedValue = item
+                    onClick = { selectedValue = item
                         onSelectedChanged(item)
                     }
                 ),
                 verticalAlignment = Alignment.CenterVertically
-            ){
+            ) {
                 RadioButton(
                     selected = selectedValue == item,
                     onClick = {

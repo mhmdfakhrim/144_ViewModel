@@ -2,5 +2,7 @@
     <string name="app_name">kotlinio</string>
     <string name="laki">laki-laki</string>
     <string name="wanita">wanita</string>
+    <string name="belummenikah">Belum Menikah</string>
+    <string name="menikah">Menikah</string>
     <string name="submit">Register</string>
 </resources>
